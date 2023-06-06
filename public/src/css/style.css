@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #414141;
+    background-color: #E0F3E1;
+}
+
+section{
+    /* position: relative; */
+    width: 100%;
+    height: 100vh;
+}
+section::before{
+    content: "";
+    background: url(../../../asset/gambar1.jfif) no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+}
+section::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000096;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 1s ease-in-out;
+    z-index: -1;
+}
+
+section:hover::after{
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+
+.ss-mobile{
+    position: absolute;
+    overflow: hidden;
+    transform: translate(-50%,0);
+    top: 10px;
+    left: 50%;
+    width: 356px;
+    height: 600px;
+    border-radius: 20px;
+    background: transparent;
+    border: 5px solid #ececec;
+}
+.ss-mobile::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 356px;
+    height: 600px;
+    background: url(../../../asset/gambar1.jfif) no-repeat;
+    background-position: center;
+    filter: brightness(.5);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.ss-mobile::after{
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 100px;
+    height: 5px;
+    border-radius: 10px 10px 0 0;
+    background-color: #b1b1b1be;
+    z-index: 10;
+}
+
+/* @media only screen and (max-width: 768px){
+    section{
+        background-size: cover;
+    }
+} */
+
+
+.ss-navigasi{
+    width: 356px;
+    height: 20px;
+    /* background-color: #b1b1b1be; */
+    position: absolute;
+    top: px;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 10;
+}
+
+.ss-navigasi ul{
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: center;
+}
+.ss-navigasi ul .navElement{
+    list-style: none;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #E0F3E1;
+
+}
+
+.ss-mobile-body{
+    /* width: 100%; */
+    position: relative;
+    height: 100%;
+    color: #E0F3E1;
+    display: grid;
+    grid-template-columns: repeat(150px, 1fr);
+    grid-template-rows: repeat(100px, 1fr);
+    gap: 10px;
+}
+
+.ss-mobile-body .ss-mobile-body-dateTime{
+    justify-self: center;
+    align-self: center;
+}
+
+.ss-mobile-body .ss-mobile-body-dateTime .ss-timeBig{
+    position: relative;
+    font-size: 48px;
+}
+.ss-mobile-body .ss-mobile-body-dateTime .ss-timeBig span span{
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+}
+
+.ss-mobile-body .ss-mobile-body-dateTime .ss-date{
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.ss-mobile-body-content{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));  
+    justify-items: center; 
+    align-items: start;
+    grid-gap: 10px;
+}
+
+.ss-mobile-body-content .ss-app-item{
+    max-width: 50px;
+    max-height: 50px;
+    justify-items: center; 
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ss-mobile-body-content .ss-app-item:nth-child(1){
+    background-color: #99D5BF;
+
+}
+
+.ss-mobile-body-content .ss-app-item .ss-app-icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.ss-mobile-body-content .ss-app-item img{
+    max-width: 38px;
+    max-height: 38px;
+}
+
+.ss-mobile-body-content .ss-app-item .ss-app-title{
+    font-size: 12px;
+}
+
+.ss-calculator{
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 600px;
+    background-color: #3f3f41;
+    z-index: 12;
+    scale: 0;
+    transition: .3s ease-out;
+}
+
+.ss-calculator.ss-active{
+    scale: 1;
+    bottom: 0;
+    transition: .3s ease-in;
+
+}
+
+.ss-calculator .ss-back{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    color: #E0F3E1;
+    cursor: pointer;
+    border-radius: 50px;
+    background: linear-gradient(225deg, #39393b, #434346);
+    box-shadow:  -5px 5px 17px #2f2f31,
+                5px -5px 17px #4f4f51;  
+}
+
+.ss-calculator .ss-calculator-content{
+    height: 600px;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+
+.ss-calculator .ss-result{
+    margin: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    direction: ltr;
+    text-align: right;
+    color: #E0F3E1;
+    font-size: 36px;
+    background: #3f3f41;
+    border-radius: 20px;
+    box-shadow: inset 9.91px 9.91px 28px #202021, inset -9.91px -9.91px 28px #5F5F62;
+}
+
+.ss-calculator .ss-keypad{
+    grid-row-end: span 3;
+    padding: 5px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-rows: repeat(5, minmax(50px, 1fr));
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    gap: 20px;
+}
+
+.ss-keypad .ss-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: larger;
+    color: #E0F3E1;
+    -webkit-border-radius: 36px;
+    border-radius: 36px;
+    background: linear-gradient(145deg, #363637, #48484B);
+    box-shadow: 9.91px 9.91px 15px #39393B, -9.91px -9.91px 15px #454547;
+}
+
+.ss-keypad .ss-button:hover{
+    background: linear-gradient(145deg, #333335, #4B4B4D);
+    box-shadow: inset 9.91px 9.91px 15px #39393B, inset -9.91px -9.91px 15px #454547;
+}
+
+.ss-keypad .ss-button.ss-button-custom{
+    grid-column-end: span 3;
+    border-radius: 20px;
+}
+
+.ss-button.ss-button-yellow{
+    color: #d4ad00;
+    font-size: x-large;
+    font-weight: 900;
+}

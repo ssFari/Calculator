@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/src/css/style.css" />
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.css" />
+    <title>Type Text</title>
+  </head>
+  <body>
+    <section>
+      <div class="ss-mobile">
+        <div class="ss-navigasi">
+          <ul>
+            <li class="timeElement navElement"></li>
+            <li class="navElement">
+              <i class="fa fa-solid fa-wifi"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="ss-mobile-body">
+          <div class="ss-mobile-body-dateTime">
+            <div class="timeElement ss-timeBig"></div>
+            <div class="dateElement ss-date"></div>
+          </div>
+          <div class="ss-mobile-body-content">
+            <div class="ss-app-item" id="ssApp">
+              <div class="ss-app-icon">
+                <img src="asset/icons8-calculator-96.png" alt="" />
+              </div>
+              <div class="ss-app-title">calculator</div>
+            </div>
+          </div>
+        </div>
+        <div class="ss-calculator">
+          <span class="ss-back"><i class="fa-solid fa-arrow-left"></i></span>
+          <div class="ss-calculator-content">
+            <input type="text" id="resultCalculator" dir="rtl" class="ss-result" readonly autofocus/>
+            <div class="ss-keypad">
+              <button onclick="clearResult()" class="ss-button ss-button-yellow ss-button-custom">C</button>
+              <button onclick="appendToResult('/')" class="ss-button"><i class="fa fa-solid fa-divide"></i></button>
+              <button onclick="appendToResult('7')" class="ss-button">7</button>
+              <button onclick="appendToResult('8')" class="ss-button">8</button>
+              <button onclick="appendToResult('9')" class="ss-button">9</button>
+              <button onclick="appendToResult('*')" class="ss-button"><i class="fa fa-solid fa-xmark"></i></button>
+              <button onclick="appendToResult('4')" class="ss-button">4</button>
+              <button onclick="appendToResult('5')" class="ss-button">5</button>
+              <button onclick="appendToResult('6')" class="ss-button">6</button>
+              <button onclick="appendToResult('-')" class="ss-button"><i class="fa fa-solid fa-minus"></i></button>
+              <button onclick="appendToResult('1')" class="ss-button">1</button>
+              <button onclick="appendToResult('2')" class="ss-button">2</button>
+              <button onclick="appendToResult('3')" class="ss-button">3</button>
+              <button onclick="appendToResult('+')" class="ss-button"><i class="fa fa-solid fa-plus"></i></button>
+              <button onclick="appendToResult('0')" class="ss-button">0</button>
+              <button onclick="calculateResult()" class="ss-button ss-button-custom"><i class="fa fa-solid fa-equals"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="public/src/js/main.js"></script>
+  </body>
+</html>
